@@ -24,7 +24,7 @@ define(function () {
         }
     };
 
-    Game.prototype.getData = function (callback) {
+    Game.prototype.getData = function () {
         var that = this;
 
         this.getUserId(function () {
