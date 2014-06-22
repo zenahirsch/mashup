@@ -1,0 +1,7 @@
+.hidden {
+    display: none;
+}
+
+#info div {
+    margin-bottom: 1em;
+}

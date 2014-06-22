@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mashup</title>
-  </head>
-  <body>
-  </body>
+    <head>
+        <title>Mashup</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script data-main="js/main" src="js/require.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </head>
+    <body>
+        <div id="login">
+            <a href="https://accounts.spotify.com/authorize/?client_id=e5be21ea028041d995fbcfcfacadcef4&response_type=token&scope=playlist-read-private&redirect_uri=http%3A%2F%2Fzena.dashron.com%3A8000" id="login-link">Login</a>
+        </div>
+
+        <h1>How Popular Is Your Music?</h1>
+
+        <div id="info">
+            <div id="info-user">
+                Hello, <strong><span id="user-id"></span></strong>! Ready to play?
+            </div>
+            <div id="info-playlist">
+                <strong>Playlist:</strong>
+                <span id="playlist-name">Loading...</span>
+            </div>
+        </div>
+
+        <div id="tracks">
+            <ul id="track-list">
+            </ul>
+        </div>
+
+    </body>
 </html>
+    
