@@ -61,16 +61,14 @@ define(function () {
             li,
             i;
 
-        console.log($trackList);
-
         for (i = 0; i < tracks.length; i++) {
-            console.log(tracks[i].track)
             popularity = tracks[i].track.popularity;
-            li = '<li><span class="track-name">' + tracks[i].track.name + '</span><br /><span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
+            li = '<li id="track-' + i + '" data-popularity="' + popularity + '"><span class="track-name">' + tracks[i].track.name + '</span><br /><span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
             $trackList.append(li);
+            tracks[i].li = $('#track-' + i);
         }
 
-        this.applyWaffle();
+        this.applyListeners();
 
         return this;
     };
@@ -147,12 +145,45 @@ define(function () {
         });
     };
 
-    Game.prototype.applyWaffle = function () {
+    Game.prototype.applyListeners = function () {
+        var that = this;
+
         $(document).waffler();
+
+        $('#submit').click(function () {
+            that.checkAnswer();
+        });
+
+        return this;
     };
 
     Game.prototype.checkAnswer = function () {
+        var $items = $('#waffle li'),
+            $item,
+            $nextItem,
+            id,
+            thisPop,
+            nextPop,
+            highPop = 0,
+            i;
 
+        $items.removeClass('wrong');
+
+        for (i = 0; i < $items.length; i++) {
+            $item = $($items[i]);
+            $nextItem = $($items[i + 1]);
+            thisPop = $item.data('popularity');
+            nextPop = $nextItem.data('popularity');
+
+            !nextPop ? nextPop = 0 : nextPop = nextPop;
+
+            if (thisPop >= nextPop) {
+                continue;
+            } else {
+                $item.addClass('wrong');
+                console.log('wrong order!');
+            }
+        }
     };
 
     return Game;
