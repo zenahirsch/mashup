@@ -104,18 +104,34 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "js/classes/game.js",
 			"settings":
 			{
-				"buffer_size": 111,
+				"buffer_size": 4075,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "js/spotify-web-api.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 8793,
+				"buffer_size": 1285,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/main.css",
+			"settings":
+			{
+				"buffer_size": 69,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 233,
 				"line_ending": "Unix"
 			}
 		}
@@ -151,6 +167,12 @@
 	},
 	"file_history":
 	[
+		"/Users/zenahirsch/Documents/Projects/elevator-simulator/js/main.js",
+		"/Users/zenahirsch/Documents/Projects/elevator-simulator/js/classes/elevator.js",
+		"/Users/zenahirsch/Documents/Projects/CDA/js/classes/tracker.js",
+		"/Users/zenahirsch/Documents/Projects/CDA/js/main.js",
+		"/Users/zenahirsch/Documents/Projects/CDA/bugs.html",
+		"/Users/zenahirsch/Documents/Projects/elevator-simulator/index.html",
 		"/Users/zenahirsch/Documents/Projects/adv-javascript/mashup/app_id.txt",
 		"/Users/zenahirsch/Documents/Projects/adv-javascript/mashup/index.html",
 		"/Users/zenahirsch/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -163,7 +185,6 @@
 		"/Users/zenahirsch/Documents/Projects/adv-javascript/oop/js/alien_hero.js",
 		"/Users/zenahirsch/Documents/Projects/adv-javascript/oop/js/tests.js",
 		"/Users/zenahirsch/Documents/Projects/elevator-simulator/js/classes/entity.js",
-		"/Users/zenahirsch/Documents/Projects/elevator-simulator/js/classes/elevator.js",
 		"/Users/zenahirsch/Documents/vimeo/vendor/paypal/merchant-sdk-php/lib/PayPal/PayPalAPI/BillAgreementUpdateReq.php",
 		"/Users/zenahirsch/Documents/vimeo/tests_api/api3/ApiGroupsTest.php",
 		"/Users/zenahirsch/Documents/vimeo/routes/api.php",
@@ -273,16 +294,11 @@
 		"/Users/zenahirsch/Documents/Projects/lifegame/index.html",
 		"/Users/zenahirsch/Documents/Projects/lifegame/lifegame.js",
 		"/Users/zenahirsch/Documents/Projects/sudoku.html",
-		"/Users/zenahirsch/Documents/Projects/sudoku/example.html",
-		"/Users/zenahirsch/Documents/Projects/sudoku/example_output.txt",
-		"/Users/zenahirsch/Documents/vimeo/definitions/definition.user.php",
-		"/Users/zenahirsch/Documents/Projects/sudoku.py",
-		"/Users/zenahirsch/Documents/vimeo/definitions/cla/definition.cla.submission.php",
-		"/Users/zenahirsch/Documents/vimeo/dictionaries/en.json"
+		"/Users/zenahirsch/Documents/Projects/sudoku/example.html"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -297,6 +313,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.log",
 			"mysql",
 			"agreement",
 			"');\n",
@@ -407,24 +424,62 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "js/classes/game.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 111,
+						"buffer_size": 4075,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								111,
-								111
+								679,
+								679
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								546,
+								546
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -434,33 +489,59 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "js/spotify-web-api.js",
-					"semi_transient": true,
+					"buffer": 2,
+					"file": "css/main.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8793,
+						"buffer_size": 69,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								66,
+								66
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								201,
+								201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -483,11 +564,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.375117260788,
 			1.0
 		],
 		"rows":
@@ -685,7 +773,7 @@
 		"selected_items":
 		[
 		],
-		"width": 818.0
+		"width": 392.0
 	},
 	"settings":
 	{

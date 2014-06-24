@@ -4,34 +4,52 @@
         <title>Mashup</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script data-main="js/main" src="js/require.js"></script>
+        
+        <script>
+            require.config({
+                urlArgs: 'bust=' + (new Date()).getTime()
+            });
+        </script>
+
+        <script src="js/jquery.waffler.js"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/waffler.css" />
     </head>
     <body>
-        <div id="login">
-            <a href="https://accounts.spotify.com/authorize/?client_id=e5be21ea028041d995fbcfcfacadcef4&response_type=token&scope=playlist-read-private&redirect_uri=http%3A%2F%2Fzenahirsch.github.io%2Fmashup%2F" id="login-link">Login</a>
+        <div id="wrapper">
+            <div id="login">
+                <a href="https://accounts.spotify.com/authorize/?client_id=e5be21ea028041d995fbcfcfacadcef4&response_type=token&scope=playlist-read-private&redirect_uri=http%3A%2F%2Fzena.dashron.com%3A8000" id="login-link">Login</a>
 
-            <!-- Don't forget to change redirect_uri to http%3A%2F%2Fzenahirsch.github.io%2Fmashup%2F for in-class demo -->
+                <!-- Don't forget to change redirect_uri to http%3A%2F%2Fzenahirsch.github.io%2Fmashup%2F for in-class demo -->
 
-            <!-- Local testing: http%3A%2F%2Fzena.dashron.com%3A8000 -->
+                <!-- Local testing: http%3A%2F%2Fzena.dashron.com%3A8000 -->
 
-        </div>
-
-        <h1>How Popular Is Your Music?</h1>
-
-        <div id="info">
-            <div id="info-user">
-                Hello, <strong><span id="user-id"></span></strong>! Ready to play?
             </div>
-            <div id="info-playlist">
-                <strong>Playlist:</strong>
-                <span id="playlist-name">Loading...</span>
-            </div>
-        </div>
 
-        <div id="tracks">
-            <ul id="track-list">
-            </ul>
-        </div>
+            <h1>How Well Do You Know Your Music?</h1>
+
+            <div id="info">
+                <div id="info-user">
+                    Hello, <strong><span id="user-id"></span></strong>!
+                </div>
+                <div id="info-playlist">
+                    Playlist:
+                    <strong><span id="playlist-name">Loading..</span></strong>
+                </div>
+                <p>Rearrange the following tracks in order of popularity (from most popular to least popular).</p>
+            </div>
+
+            <div id="tracks">
+                <ul id="waffle" class="waffle-list">
+                </ul>
+            </div>
+
+            <div id="controls">
+                <button id="submit">Check Answer</button>
+                <button id="reset">Reset</button>
+            </div>
+
+        </div><!-- /#wrapper -->
 
     </body>
 </html>

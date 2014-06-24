@@ -1,7 +1,67 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    color: rgb(80, 80, 80);
+}
+
+#wrapper {
+    width: 700px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
 .hidden {
     display: none;
 }
 
-#info div {
-    margin-bottom: 1em;
+h1 {
+    color: rgb(100, 140, 180);
+    text-align: center;
+}
+
+#info {
+    overflow: hidden;
+}
+
+#info p {
+    float: left;
+    overflow: hidden;
+}
+
+#info-user {
+    float: left;
+    width: 50%;
+}
+
+#info-playlist {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.track-name {
+    font-weight: bold;
+}
+
+.artist {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+#controls {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+button {
+    padding: 0.5em;
+    font-size: 1em;
+    background-color: white;
+    border: solid 1px black;
+    width: 10em;
+    margin: 0 1em;
+}
+
+button:hover {
+    cursor: pointer;
+    font-weight: bold;
 }

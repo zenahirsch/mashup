@@ -55,17 +55,22 @@ define(function () {
     };
 
     Game.prototype.showTracks = function () {
-        var $trackList = $('#track-list'),
+        var $trackList = $('#waffle'),
             tracks = this.playlistTracks.items,
             popularity,
             li,
             i;
 
+        console.log($trackList);
+
         for (i = 0; i < tracks.length; i++) {
+            console.log(tracks[i].track)
             popularity = tracks[i].track.popularity;
-            li = '<li>' + tracks[i].track.name + ' (popularity: ' + popularity + ')</li>'
+            li = '<li><span class="track-name">' + tracks[i].track.name + '</span><br /><span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
             $trackList.append(li);
         }
+
+        this.applyWaffle();
 
         return this;
     };
@@ -140,6 +145,14 @@ define(function () {
                 console.log(err);
             }
         });
+    };
+
+    Game.prototype.applyWaffle = function () {
+        $(document).waffler();
+    };
+
+    Game.prototype.checkAnswer = function () {
+
     };
 
     return Game;
