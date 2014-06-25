@@ -177,12 +177,12 @@ define(function () {
 
     Game.prototype.checkAnswer = function () {
         var $items = $('#waffle li'),
+            finished = true,
             $item,
             $nextItem,
             id,
             thisPop,
             nextPop,
-            highPop = 0,
             i;
 
         $items.removeClass('wrong');
@@ -198,9 +198,17 @@ define(function () {
             if (thisPop >= nextPop) {
                 continue;
             } else {
+                finished = false;
                 $item.addClass('wrong');
                 console.log('wrong order!');
             }
+        }
+
+        if (finished) {
+            $items.css({
+                'opacity': '0.1'
+            });
+            $('#win-message').show();
         }
     };
 
