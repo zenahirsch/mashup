@@ -10,6 +10,13 @@ define(function () {
 
     Game.prototype.playlistTracks = null;
 
+    Game.prototype.displayGame = function () {
+        $('#game').show();
+        $('#header').show();
+        $('#login-message').hide();
+        return this;
+    };
+
     Game.prototype.getAccessToken = function () {
         var hash = window.location.hash.substring(1),
             pairs = hash.split('&'),
@@ -17,6 +24,7 @@ define(function () {
 
         if (firstPair[0] === 'access_token') {
             this.accessToken = firstPair[1];
+            this.displayGame();
             return true;
         } else {
             console.log('Could not get the access token.');
@@ -61,12 +69,17 @@ define(function () {
             li,
             i;
 
+        $('#loading-message').hide();
+        $trackList.empty();
+
         for (i = 0; i < tracks.length; i++) {
             popularity = tracks[i].track.popularity;
-            li = '<li id="track-' + i + '" data-popularity="' + popularity + '"><span class="track-name">' + tracks[i].track.name + '</span><br /><span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
+            li = '<li id="track-' + i + '" data-popularity="' + popularity + '"><span class="track-name">' + tracks[i].track.name + '</span> <span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
             $trackList.append(li);
             tracks[i].li = $('#track-' + i);
         }
+
+        $('.reminder').show();
 
         this.applyListeners();
 
@@ -154,6 +167,11 @@ define(function () {
             that.checkAnswer();
         });
 
+        $('#reset').click(function () {
+            console.log('reset')
+            that.reset();
+        });
+
         return this;
     };
 
@@ -184,6 +202,10 @@ define(function () {
                 console.log('wrong order!');
             }
         }
+    };
+
+    Game.prototype.reset = function () {
+        this.showTracks();
     };
 
     return Game;

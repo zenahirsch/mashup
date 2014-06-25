@@ -1,12 +1,20 @@
 body {
-    font-family: helvetica, arial, sans-serif;
+    font-family: 'Open Sans', helvetica, arial, sans-serif;
     color: rgb(80, 80, 80);
+    margin: 3em;
+    padding: 1em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 #wrapper {
     width: 700px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 0 1em;
+    position: relative;
 }
 
 .hidden {
@@ -18,12 +26,69 @@ body {
 }
 
 h1 {
-    color: rgb(100, 140, 180);
+    color: rgb(92, 154, 0);
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+    opacity: 0.7;
+    font-weight: normal;
+}
+
+#login-message {
+    width: 85%;
+    line-height: 1.4;
+    text-align: center;
+    margin: 2em auto;
+}
+
+#login-message p {
+    padding: 0;
+    margin-bottom: 2em;
+}
+
+#login-link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em;
+    font-size: 1em;
+    background-color: rgb(112, 174, 20);
+    color: rgba(255, 255, 255, 0.8);
+    border: solid 1px black;
+    width: 10em;
+    text-align: center;
+}
+
+#login-link:hover {
+    opacity: 0.8;
+    background-color: #7AB800;
+}
+
+#lower {
+    position: relative;
+}
+
+#header {
+    background-color: rgba(80, 80, 80, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    color: white;
+    padding: 0.5em 1em;
+    border-bottom: solid 1px rgb(10, 10, 10);
+}
+
 #info {
+    margin-top: 0.25em;
     overflow: hidden;
+    opacity: 0.8;
+    width: 50%;
+    float: left;
 }
 
 #info p {
@@ -31,15 +96,22 @@ h1 {
     overflow: hidden;
 }
 
-#info-user {
-    float: left;
-    width: 50%;
+#loading-message {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0.8;
 }
 
-#info-playlist {
-    float: right;
-    width: 50%;
-    text-align: right;
+#tracks {
+    text-align: center;
+}
+
+.reminder {
+    font-size: 1.5em;
+    opacity: 0.2;
+    margin: 0.5em;
+    font-weight: bold;
 }
 
 .track-name {
@@ -52,20 +124,28 @@ h1 {
 }
 
 #controls {
-    margin-bottom: 2em;
-    text-align: center;
+    width: 47.5%;
+    float: left;
+    text-align: right;
 }
 
 button {
     padding: 0.5em;
-    font-size: 1em;
+    font-size: 0.8em;
     background-color: white;
     border: solid 1px black;
     width: 10em;
-    margin: 0 1em;
+    display: inline-block;
+    opacity: 0.7;
+    margin: 0;
+    margin-left: 1em;
 }
 
 button:hover {
     cursor: pointer;
     font-weight: bold;
+}
+
+button:focus {
+    outline: none;
 }

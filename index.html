@@ -14,39 +14,48 @@
         <script src="js/jquery.waffler.js"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/waffler.css" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="wrapper">
-            <div id="login">
-                <a href="https://accounts.spotify.com/authorize/?client_id=e5be21ea028041d995fbcfcfacadcef4&response_type=token&scope=playlist-read-private&redirect_uri=http%3A%2F%2Fzena.dashron.com%3A8000" id="login-link">Login</a>
 
-                <!-- Don't forget to change redirect_uri to http%3A%2F%2Fzenahirsch.github.io%2Fmashup%2F for in-class demo -->
-
-                <!-- Local testing: http%3A%2F%2Fzena.dashron.com%3A8000 -->
-
+            <div id="header" class="hidden">
+                <div id="info">
+                    <div id="info-user">
+                        Hello, <strong><span id="user-id"></span></strong>! Playlist:
+                        <strong><span id="playlist-name">Loading..</span></strong>
+                    </div>
+                </div>
+                <div id="controls">
+                    <button id="submit">Check Order</button>
+                    <button id="reset">Reset</button>
+                </div>
             </div>
 
             <h1>Rank Your Music</h1>
 
-            <div id="info">
-                <div id="info-user">
-                    Hello, <strong><span id="user-id"></span></strong>!
-                </div>
-                <div id="info-playlist">
-                    Playlist:
-                    <strong><span id="playlist-name">Loading..</span></strong>
-                </div>
-                <p>Rearrange the following tracks in order of popularity (from most popular to least popular).</p>
+            <div id="login-message">
+                <p><strong>Instructions:</strong><br /><br />
+                This game will choose a random playlist from your Spotify account. You'll be asked to rank the songs in this playlist from most popular to least popular. Find out how well you know your music!</p>
+
+                <a href="https://accounts.spotify.com/authorize/?client_id=e5be21ea028041d995fbcfcfacadcef4&response_type=token&scope=playlist-read-private&redirect_uri=http%3A%2F%2Fzena.dashron.com%3A8000" id="login-link">Login to Spotify</a>
+
+                <!-- Don't forget to change redirect_uri to http%3A%2F%2Fzenahirsch.github.io%2Fmashup%2F for in-class demo -->
+
+                <!-- Local testing: http%3A%2F%2Fzena.dashron.com%3A8000 -->
             </div>
 
-            <div id="tracks">
-                <ul id="waffle" class="waffle-list">
-                </ul>
-            </div>
+            <div id="game" class="hidden">
 
-            <div id="controls">
-                <button id="submit">Check Answer</button>
-                <button id="reset">Reset</button>
+                <h2>Order the following tracks according to their popularity.</h2>
+
+                <div id="tracks">
+                    <span id="loading-message">Loading track information...</span>
+                    <div id="most-popular" class="reminder hidden">Most Popular</div>
+                    <ul id="waffle" class="waffle-list">
+                    </ul>
+                    <div id="least-popular" class="reminder hidden">Least Popular</div>
+                </div>
             </div>
 
         </div><!-- /#wrapper -->

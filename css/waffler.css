@@ -9,7 +9,6 @@ body {
 
 .waffle-list {
     list-style: none outside none;
-    padding: 1em;
     position: relative;
     width: auto;
 }
@@ -17,10 +16,10 @@ body {
 .waffle-list li {
     cursor: default;
     padding: 0.6em;
-    margin-bottom: 1em;
-    background-color: rgb(90, 130, 170);
+    margin-bottom: 0.5em;
+    background-color: rgb(92, 154, 0);
     color: rgb(245, 245, 255);
-    font-size: 1em;
+    font-size: 0.85em;
     text-align: center;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -31,5 +30,6 @@ body {
 
 .waffle-list li:hover {
     cursor: pointer;
+    opacity: 0.9 !important;
 }
 

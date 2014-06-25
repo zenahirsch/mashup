@@ -107,15 +107,7 @@
 			"file": "js/classes/game.js",
 			"settings":
 			{
-				"buffer_size": 4075,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 1285,
+				"buffer_size": 5249,
 				"line_ending": "Unix"
 			}
 		},
@@ -123,7 +115,23 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 69,
+				"buffer_size": 873,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/waffler.css",
+			"settings":
+			{
+				"buffer_size": 754,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1960,
 				"line_ending": "Unix"
 			}
 		},
@@ -132,6 +140,14 @@
 			"settings":
 			{
 				"buffer_size": 233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/jquery.waffler.js",
+			"settings":
+			{
+				"buffer_size": 1661,
 				"line_ending": "Unix"
 			}
 		}
@@ -167,6 +183,9 @@
 	},
 	"file_history":
 	[
+		"/Users/zenahirsch/Documents/Projects/adv-javascript/mashup/css/waffler.css",
+		"/Users/zenahirsch/Documents/Projects/adv-javascript/mashup/js/jquery.waffler.js",
+		"/Users/zenahirsch/Documents/Projects/jquery-waffler/demo.html",
 		"/Users/zenahirsch/Documents/Projects/elevator-simulator/js/main.js",
 		"/Users/zenahirsch/Documents/Projects/elevator-simulator/js/classes/elevator.js",
 		"/Users/zenahirsch/Documents/Projects/CDA/js/classes/tracker.js",
@@ -291,10 +310,7 @@
 		"/Users/zenahirsch/Documents/vimeo/web/assets/styles/sass/developer.scss",
 		"/Users/zenahirsch/Documents/Projects/sudoku/sudoku.js",
 		"/Users/zenahirsch/Documents/Projects/github-to-es/github-mover.py",
-		"/Users/zenahirsch/Documents/Projects/lifegame/index.html",
-		"/Users/zenahirsch/Documents/Projects/lifegame/lifegame.js",
-		"/Users/zenahirsch/Documents/Projects/sudoku.html",
-		"/Users/zenahirsch/Documents/Projects/sudoku/example.html"
+		"/Users/zenahirsch/Documents/Projects/lifegame/index.html"
 	],
 	"find":
 	{
@@ -313,6 +329,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"waffle",
+			"console.log",
+			"tracks",
+			"tracklist",
 			"console.log",
 			"mysql",
 			"agreement",
@@ -428,15 +448,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4075,
+						"buffer_size": 5249,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								679,
-								679
+								5052,
+								5052
 							]
 						],
 						"settings":
@@ -446,63 +466,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2803.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								546,
-								546
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "css/main.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 69,
+						"buffer_size": 873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								66,
-								66
+								232,
+								232
 							]
 						],
 						"settings":
@@ -513,11 +497,77 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
+					"buffer": 2,
+					"file": "css/waffler.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								441,
+								441
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 64.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
 					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1142,
+								1142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 917.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "js/main.js",
 					"semi_transient": false,
 					"settings":
@@ -529,8 +579,8 @@
 						"selection":
 						[
 							[
-								201,
-								201
+								27,
+								27
 							]
 						],
 						"settings":
@@ -541,7 +591,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/jquery.waffler.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1661,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -575,7 +655,7 @@
 		"cols":
 		[
 			0.0,
-			0.375117260788,
+			0.558218562151,
 			1.0
 		],
 		"rows":
@@ -782,7 +862,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 109.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

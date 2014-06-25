@@ -5,7 +5,6 @@ define(function (require) {
         $loginLink = $('#login-link');
 
     if (g.getAccessToken()) {
-        $loginLink.addClass('hidden');
         g.getData();
     }
 
