@@ -75,7 +75,7 @@ h2 {
 }
 
 #header {
-    background-color: rgba(80, 80, 80, 0.9);
+    background-color: rgba(40, 40, 40, 0.9);
     position: fixed;
     top: 0;
     left: 0;
@@ -135,11 +135,10 @@ h2 {
 button {
     padding: 0.5em;
     font-size: 0.8em;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     border: solid 1px black;
     width: 10em;
     display: inline-block;
-    opacity: 0.7;
     margin: 0;
     margin-left: 1em;
 }
@@ -147,6 +146,7 @@ button {
 button:hover {
     cursor: pointer;
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 button:focus {
