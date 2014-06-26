@@ -163,13 +163,25 @@ define(function () {
 
         $(document).waffler();
 
-        $('#submit').click(function () {
+        $('#submit').click(function (e) {
+            e.preventDefault();
             that.checkAnswer();
         });
 
-        $('#reset').click(function () {
+        $('#reset').click(function (e) {
+            e.preventDefault();
             console.log('reset')
             that.reset();
+        });
+
+        $('#play-again-link').click(function (e) {
+            e.preventDefault();
+            that.choosePlaylist(function () {
+                that.showPlaylistInfo().getPlaylistTracks(function () {
+                    that.showTracks();
+                    $('#win-message').hide();
+                });
+            });
         });
 
         return this;
@@ -205,9 +217,6 @@ define(function () {
         }
 
         if (finished) {
-            $items.css({
-                'opacity': '0.1'
-            });
             $('#win-message').show();
         }
     };

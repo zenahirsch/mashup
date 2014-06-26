@@ -104,18 +104,18 @@
 	"buffers":
 	[
 		{
-			"file": "js/classes/game.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5249,
+				"buffer_size": 2801,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "css/main.css",
+			"file": "js/classes/game.js",
 			"settings":
 			{
-				"buffer_size": 873,
+				"buffer_size": 5916,
 				"line_ending": "Unix"
 			}
 		},
@@ -123,15 +123,15 @@
 			"file": "css/waffler.css",
 			"settings":
 			{
-				"buffer_size": 754,
+				"buffer_size": 768,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 1960,
+				"buffer_size": 2249,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,7 +139,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 233,
+				"buffer_size": 194,
 				"line_ending": "Unix"
 			}
 		},
@@ -329,6 +329,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"login-link",
 			"waffle",
 			"console.log",
 			"tracks",
@@ -444,19 +445,55 @@
 			[
 				{
 					"buffer": 0,
-					"file": "js/classes/game.js",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5249,
+						"buffer_size": 2801,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5052,
-								5052
+								2683,
+								2683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3304.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "js/classes/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5916,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5793,
+								5793
 							]
 						],
 						"settings":
@@ -466,38 +503,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2803.0,
+						"translation.y": 3358.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								232,
-								232
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -506,15 +515,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 754,
+						"buffer_size": 768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								441,
-								441
+								450,
+								450
 							]
 						],
 						"settings":
@@ -529,38 +538,32 @@
 					},
 					"stack_index": 3,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 3,
-					"file": "index.html",
+					"file": "css/main.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1960,
+						"buffer_size": 2249,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1142,
-								1142
+								2247,
+								2247
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 917.0,
+						"translation.y": 2242.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -572,15 +575,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 233,
+						"buffer_size": 194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27,
-								27
+								162,
+								162
 							]
 						],
 						"settings":
@@ -618,7 +621,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -655,7 +658,7 @@
 		"cols":
 		[
 			0.0,
-			0.558218562151,
+			0.312333235129,
 			1.0
 		],
 		"rows":
@@ -842,7 +845,7 @@
 		[
 			[
 				"",
-				"~/Documents/Projects/elevator-simulator/elevator-simulator.sublime-project"
+				"~/Documents/Projects/adv-javascript/mashup/mashup.sublime-project"
 			]
 		],
 		"width": 380.0
