@@ -1,6 +1,8 @@
 define(function () {
 
-    var Game = function () {};
+    var Game = function () {
+        this.playlistTracks = [];
+    };
 
     Game.prototype.userId = null;
 
@@ -61,29 +63,45 @@ define(function () {
     };
 
     Game.prototype.showPlaylistInfo = function () {
-        var $playlistName = $('#playlist-name'),
-            playlistName = this.chosenPlaylist.name;
+        var $playlistName = $('#playlist-name');
 
-        $playlistName.html(playlistName);
+        if (this.chosenPlaylist) {
+            $playlistName.html(this.chosenPlaylist.name);
+        } else {
+            $playlistName.html('None');
+        }
 
         return this;
     };
 
     Game.prototype.showTracks = function () {
         var $trackList = $('#waffle'),
-            tracks = this.playlistTracks.items,
             popularity,
+            tracks,
             li,
             i;
 
         $('#loading-message').hide();
         $trackList.empty();
 
-        for (i = 0; i < tracks.length; i++) {
-            popularity = tracks[i].track.popularity;
-            li = '<li id="track-' + i + '" data-popularity="' + popularity + '"><span class="track-name">' + tracks[i].track.name + '</span> <span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
-            $trackList.append(li);
-            tracks[i].li = $('#track-' + i);
+        if (this.playlistTracks && this.playlistTracks.items) {
+            tracks = this.playlistTracks.items;
+            for (i = 0; i < tracks.length; i++) {
+                popularity = tracks[i].track.popularity;
+                li = '<li id="track-' + i + '" data-popularity="' + popularity + '"><span class="track-name">' + tracks[i].track.name + '</span> <span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
+                $trackList.append(li);
+                tracks[i].li = $('#track-' + i);
+            }
+        } else {
+            $trackList.html(
+                '<div class="lb-message">' +
+                    '<div class="lb-message-content">' +
+                        '<p>No playist found.</p>' +
+                        '<p class="lb-subtext">Create a Spotify playlist with more than one track in it!</p>' +
+                        '<a href="/" id="try-again-link" class="lb-link">Try again</a>' +
+                    '</div>' +
+                '</div>'
+            );
         }
 
         $('.reminder').show();
@@ -122,21 +140,25 @@ define(function () {
             },
             success: function (playlistData) {
                 var playlists = playlistData.items,
+                    possiblePlaylists = [],
                     chosenPlaylist,
-                    r;
+                    r,
+                    i;
 
-                while (!chosenPlaylist) {
-                    if (playlists.length) {
-                        r = Math.floor(Math.random() * playlists.length);
-
-                        if (playlists[r].tracks.total > 1) {
-                            chosenPlaylist = playlists[r];
-                            that.chosenPlaylist = chosenPlaylist;
-                            callback();
-                        }
+                for (i = 0; i < playlists.length; i++) {
+                    if (playlists[i].tracks.total > 1) {
+                        possiblePlaylists.push(playlists[i]);
                     }
                 }
-                
+
+                if (possiblePlaylists.length) {
+                    r = Math.floor(Math.random() * possiblePlaylists.length);
+                    that.chosenPlaylist = possiblePlaylists[r];
+                    callback();
+                } else {
+                    that.chosenPlaylist = null;
+                    callback();
+                }
             },
             error: function (err) {
                 console.log(err);
@@ -145,24 +167,26 @@ define(function () {
     };
 
     Game.prototype.getPlaylistTracks = function (callback) {
-        var playlistId = this.chosenPlaylist.id,
-            playlistOwnerId = this.chosenPlaylist.owner.id,
-            that = this;
+        var that = this;
 
-        $.ajax({
-            url: 'https://api.spotify.com/v1/users/' + playlistOwnerId + '/playlists/' + playlistId + '/tracks',
-            headers: {
-                'Authorization': 'Bearer ' + this.accessToken
-            },
-            success: function (tracks) {
-                that.playlistTracks = tracks;
-                callback();
-                
-            },
-            error: function (err) {
-                console.log(err);
-            }
-        });
+        if (this.chosenPlaylist) {
+            $.ajax({
+                url: 'https://api.spotify.com/v1/users/' + that.chosenPlaylist.owner.id + '/playlists/' + that.chosenPlaylist.id + '/tracks',
+                headers: {
+                    'Authorization': 'Bearer ' + that.accessToken
+                },
+                success: function (tracks) {
+                    that.playlistTracks = tracks;
+                    callback();
+                    
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        } else {
+            callback();
+        }
     };
 
     Game.prototype.applyListeners = function () {
@@ -177,8 +201,16 @@ define(function () {
 
         $('#reset').click(function (e) {
             e.preventDefault();
-            console.log('reset')
             that.reset();
+        });
+
+        $('#skip').click(function (e) {
+            e.preventDefault();
+            that.choosePlaylist(function () {
+                that.showPlaylistInfo().getPlaylistTracks(function () {
+                    that.showTracks();
+                });
+            });
         });
 
         $('#play-again-link').click(function (e) {
@@ -189,6 +221,16 @@ define(function () {
                     $('#win-message').hide();
                 });
             });
+        });
+
+        $('#try-again-link').click(function (e) {
+            e.preventDefault();
+            that.choosePlaylist(function () {
+                that.showPlaylistInfo().getPlaylistTracks(function () {
+                    that.showTracks();
+                });
+            });
+
         });
 
         return this;
@@ -219,7 +261,6 @@ define(function () {
             } else {
                 finished = false;
                 $item.addClass('wrong');
-                console.log('wrong order!');
             }
         }
 
