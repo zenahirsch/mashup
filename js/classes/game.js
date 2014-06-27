@@ -28,8 +28,15 @@ define(function () {
             return true;
         } else {
             console.log('Could not get the access token.');
+            this.displayLoginMessage();
             return false;
         }
+    };
+
+    Game.prototype.displayLoginMessage = function () {
+        var $loginMessage = $('#login-message');
+
+        $loginMessage.show();
     };
 
     Game.prototype.getData = function () {
