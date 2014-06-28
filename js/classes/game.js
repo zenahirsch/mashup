@@ -77,6 +77,7 @@ define(function () {
     Game.prototype.showTracks = function () {
         var $trackList = $('#waffle'),
             popularity,
+            previewURL,
             tracks,
             li,
             i;
@@ -87,8 +88,17 @@ define(function () {
         if (this.playlistTracks && this.playlistTracks.items) {
             tracks = this.playlistTracks.items;
             for (i = 0; i < tracks.length; i++) {
+                console.log(tracks[i].track);
                 popularity = tracks[i].track.popularity;
-                li = '<li id="track-' + i + '" data-popularity="' + popularity + '"><span class="track-name">' + tracks[i].track.name + '</span> <span class="artist">' + tracks[i].track.artists[0].name + '</span></li>';
+                previewURL = tracks[i].track.preview_url;
+                li = '' +
+                    '<li id="track-' + i + '" data-popularity="' + popularity + '">' +
+                        '<span class="track-name">' + tracks[i].track.name + '</span> ' +
+                        '<span class="artist">' + tracks[i].track.artists[0].name + '</span> ' +
+                        '<span class="preview">' +
+                            '<a href="/" class="preview-link" data-preview-url="' + previewURL + '">&#9835;</a>' +
+                        '</span>'
+                    '</li>';
                 $trackList.append(li);
                 tracks[i].li = $('#track-' + i);
             }
@@ -204,13 +214,18 @@ define(function () {
             that.reset();
         });
 
-        $('#skip').click(function (e) {
+        $('.preview').click(function (e) {
+            var $previewLink = $(this).find('.preview-link'),
+                previewURL = $previewLink.data('preview-url'),
+                $previewPlayer = $('#preview-player');
+
             e.preventDefault();
-            that.choosePlaylist(function () {
-                that.showPlaylistInfo().getPlaylistTracks(function () {
-                    that.showTracks();
-                });
-            });
+
+            if ($previewPlayer.attr('src') === previewURL) {
+                $previewPlayer.trigger('pause').attr('src', '');
+            } else {
+                $previewPlayer.attr('src', previewURL).trigger('play');
+            }
         });
 
         $('#play-again-link').click(function (e) {

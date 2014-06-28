@@ -126,6 +126,27 @@ h2 {
     opacity: 0.8;
 }
 
+.preview {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 3px 8px;
+    color: inherit;
+    opacity: 0.6;
+}
+
+.preview a {
+    text-decoration: none;
+    font-size: 1em;
+    color: inherit;
+}
+
+.preview:hover {
+    opacity: 1;
+}
+
 #controls {
     width: 47.5%;
     float: left;

@@ -15,17 +15,18 @@ body {
 
 .waffle-list li {
     cursor: default;
-    padding: 0.6em;
+    padding: 0.6em 3em;
     margin-bottom: 0.5em;
     background-color: rgb(92, 154, 0);
     color: rgb(245, 245, 255);
     font-size: 0.85em;
     text-align: center;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    position: relative;
 }
 
 .waffle-list li:hover {

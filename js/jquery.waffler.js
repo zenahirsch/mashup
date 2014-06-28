@@ -50,7 +50,8 @@
             if (dragging) {
                 $waffleItems.css({
                     'opacity': '1',
-                    'position': 'static'
+                    'position': 'relative',
+                    'top': 0
                 });
                 dragging = false;
             }
